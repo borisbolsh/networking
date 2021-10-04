@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DownloadImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Jex-C8-RPp">
+                                <rect key="frame" x="87" y="280" width="240" height="336"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ih-jd-aqT">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PLm-zH-u1n">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="Dia-sf-m1n"/>
+                                                    <constraint firstAttribute="width" constant="240" id="LEI-uP-V5e"/>
+                                                </constraints>
+                                            </imageView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1Tr-2s-GJp">
+                                                <rect key="frame" x="101.5" y="101.5" width="37" height="37"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="PLm-zH-u1n" firstAttribute="centerX" secondItem="0ih-jd-aqT" secondAttribute="centerX" id="4js-dD-jeb"/>
+                                            <constraint firstAttribute="width" constant="240" id="Wdi-3E-xgF"/>
+                                            <constraint firstItem="PLm-zH-u1n" firstAttribute="centerY" secondItem="0ih-jd-aqT" secondAttribute="centerY" id="hwN-u8-2Sc"/>
+                                            <constraint firstItem="1Tr-2s-GJp" firstAttribute="centerY" secondItem="0ih-jd-aqT" secondAttribute="centerY" id="qs8-dA-VpH"/>
+                                            <constraint firstAttribute="height" constant="240" id="tFg-lO-XEW"/>
+                                            <constraint firstItem="1Tr-2s-GJp" firstAttribute="centerX" secondItem="0ih-jd-aqT" secondAttribute="centerX" id="u2L-Tj-CWl"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8u-l9-Fre">
+                                        <rect key="frame" x="0.0" y="280" width="240" height="56"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="TC9-Yo-RZi"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Get image"/>
+                                        <connections>
+                                            <action selector="getImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Vz-lh-5IW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="k8u-l9-Fre" firstAttribute="leading" secondItem="Jex-C8-RPp" secondAttribute="leading" id="4nc-0r-MS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="k8u-l9-Fre" secondAttribute="trailing" id="E3O-Gb-NSj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jex-C8-RPp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8IP-yN-wrE"/>
+                            <constraint firstItem="Jex-C8-RPp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jxe-Tz-yGt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Button" destination="k8u-l9-Fre" id="yr2-0K-Bvs"/>
+                        <outlet property="activityInd" destination="1Tr-2s-GJp" id="cxb-6v-EIV"/>
+                        <outlet property="image" destination="PLm-zH-u1n" id="SY9-Sb-7Dl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
