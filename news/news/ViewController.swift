@@ -6,40 +6,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    let sessionConfiguration = URLSessionConfiguration.default
-    let session = URLSession.shared
-    let decoder = JSONDecoder()
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataSource = [Post]()
+    let networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        getPosts()
-    }
-
-    func getPosts() {
-
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-
-        session.dataTask(with: url) { [weak self] (data, response, error) in
-
-            guard let strongSelf = self else { return }
-
-            if error == nil, let parseData = data {
-
-                let posts = try? strongSelf.decoder.decode([Post].self, from: parseData)
-
-                print("Posts: \(posts?.count) ")
-            } else {
-                print("Error: \(error?.localizedDescription)")
+        tableView.dataSource = self
+    
+        networkManager.getPosts { [weak self] (result) in
+            
+            switch result {
+            case .success(let posts):
+                self?.dataSource = posts
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
             }
-
-        }.resume()
-
-
+        }
     }
 
+    
+
+    
+    
+    // MARK: TableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return dataSource.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let post = dataSource[indexPath.row]
+        
+        cell.textLabel?.text = post.title
+        cell.detailTextLabel?.text = post.body
+        
+        return cell
+        
+    }
 
 }

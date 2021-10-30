@@ -14,6 +14,7 @@
 		4551E6FD2720AA7B00070C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4551E6FC2720AA7B00070C79 /* Assets.xcassets */; };
 		4551E7002720AA7B00070C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4551E6FE2720AA7B00070C79 /* LaunchScreen.storyboard */; };
 		45B54D91272DD63300661DD4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B54D90272DD63300661DD4 /* Post.swift */; };
+		45B54D93272DDC5900661DD4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B54D92272DDC5900661DD4 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4551E6FF2720AA7B00070C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4551E7012720AA7B00070C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B54D90272DD63300661DD4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		45B54D92272DDC5900661DD4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				4551E6F32720AA7900070C79 /* AppDelegate.swift */,
 				4551E6F52720AA7900070C79 /* SceneDelegate.swift */,
 				4551E6F72720AA7900070C79 /* ViewController.swift */,
+				45B54D92272DDC5900661DD4 /* NetworkManager.swift */,
 				45B54D90272DD63300661DD4 /* Post.swift */,
 				4551E6F92720AA7900070C79 /* Main.storyboard */,
 				4551E6FC2720AA7B00070C79 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				4551E6F82720AA7900070C79 /* ViewController.swift in Sources */,
 				4551E6F42720AA7900070C79 /* AppDelegate.swift in Sources */,
+				45B54D93272DDC5900661DD4 /* NetworkManager.swift in Sources */,
 				4551E6F62720AA7900070C79 /* SceneDelegate.swift in Sources */,
 				45B54D91272DD63300661DD4 /* Post.swift in Sources */,
 			);
